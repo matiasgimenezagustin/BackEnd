@@ -1,1 +1,0 @@
-[{"title":"celular","price":2002,"thumbnail":"sdad","id":2},{"title":"celular","price":2002,"thumbnail":"sdad","id":3}]{"title":"celular eqwewqewq","price":2002,"thumbnail":"sdad","id":1}]

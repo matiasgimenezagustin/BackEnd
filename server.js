@@ -45,11 +45,9 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-
-
 const products = new classPoducts();
 
-
+//Router express incorporado
 const routerProducts = Router();
 app.use("/api/products", routerProducts);
 
@@ -78,15 +76,23 @@ routerProducts.post("/", (req, res) =>{
 
 routerProducts.delete("/:id", (req, res) =>{
     const {id} = req.params;
-    products.deleteById(parseInt(id))
-    res.json(products)
+    if(isNaN(id)|| id < 1){
+        res.json({"ERROR": "ID ingresado no es numerico o es menor a 1"})
+    }else{
+        products.deleteById(parseInt(id));
+    }
+    res.json(products);
 })
 
 routerProducts.put("/:id", (req, res) =>{
     const {id} = req.params;
     const {title, price, thumbnail} = req.body;
-    products.save({title: title, price: price, thumbnail: thumbnail}, parseInt(id))
-    res.json(products)
+    if(isNaN(id)|| id < 1){
+        res.json({"ERROR": "ID ingresado no es numerico o es menor a 1"})
+    }else{
+        products.save({title: title, price: price, thumbnail: thumbnail}, parseInt(id));
+    }
+    res.json(products);
 })
 
 //Listener server
