@@ -48,6 +48,9 @@ class ProductsClass {
         await saveArchive("./productos.txt", map, `se elimino el producto con ID: ${id} exitosamente`);
         
     }
+    exist(){
+        return this.products.length > 0;
+    }
 } 
 
 module.exports = ProductsClass

@@ -1,0 +1,14 @@
+<h1>Lista de Productos</h1>
+{{#if exist}}
+    <section>
+        {{#each products}}
+            <ul>
+                <li>Nombre: {{this.title}}</li>
+                <li>Precio: ${{this.price}}</li>
+                <li><img src={{this.thumbnail}} alt=""><li>
+            </ul>
+            <hr/>
+        {{/each}}
+    </section>
+{{/if}}
+<a href="./products">volver</a>

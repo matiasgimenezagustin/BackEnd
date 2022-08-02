@@ -1,0 +1,8 @@
+Luego de haber implementado las 3 opciones que me proporcionaron de templete engines llegue a la conclusion de que la opcion mas optima puede variar dependiendo del proyecto que lleves a cabo
+
+Pienso que EJS y Handlebars es mas aplicable a proyectos medianos/ grandes ya que posee una sintaxis mas parecida a html. Siendo EJS el mas optimo para poryectos grandes. 
+
+Mientras que Pug es mas aplicable a proyectos chicos, ya que permite obtener los mismos resultados que EJS o Handlebars pero con un codigo menos escalable, ya que la sintaxis que tiene es a menos parecida a html o js y puede resultar confuso de desarrollar a gran escala. Un ejemplo de eso es el "val", "key", "index" en el EACH, que si bien te pueden ayudar para salir del paso en un proyecto chico, la realidad es que es limitado comparado con el poder de logica que pueden proporcionar sus competencias mas similares a JS.
+
+En cuanto a mi preferencia, se me hizo mas comodo Handlebars. Principalmente porque su documentacion es mucho mas clara que la de sus competencias y ademas tiene una sintaxis mucho mas sencilla de implemetar que EJS.
+
