@@ -35,7 +35,7 @@ app.get("/", (req, res) => {
 
 
 //Router express incorporado
-const routerProducts = Router();
+/* const routerProducts = Router();
 app.use("/products", routerProducts);
 
 routerProducts.get("/", (req, res) =>{
@@ -84,7 +84,7 @@ routerProducts.put("/:id", (req, res) =>{
     }
     res.render("listProducts", {products: products, exist: products.exist()});
 })
-
+ */
 //Listener server
 app.listen(PORT, ()=>{
     console.log(`Exito: El servidor se esta escuchando en el puerto ${PORT}`);

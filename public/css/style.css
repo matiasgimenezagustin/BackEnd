@@ -1,0 +1,34 @@
+*{
+    list-style-type: none;
+}
+
+.formContainer{
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+    background-color: rgb(210, 214, 214);
+}
+body{
+    background-color: rgb(228, 228, 172);
+}
+h2{
+    font-size: 2rem;
+}
+p{
+    font-size: 1.5rem;
+}
+li{
+    font-size: 1.5rem;
+}
+label{
+    font-size: 1.7rem;
+}
+.emailText{
+    color: blue;
+}
+.dateText{
+    color: brown;
+}
+.mensajeText{
+    color: green;
+}
