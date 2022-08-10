@@ -1,16 +1,23 @@
 
 <section class="formContainer">
+        <h2>Ingrese su producto</h2>
         <form  id="formProducts" name="formProducts" method="post">
-        <label>Ingresa el nombre del producto</label>
-        <input type="text" name="title" placeholder="Title" required id="title">
-        <label>Ingresa el precio de tu producto</label>
-        <input type="text" name="price" required placeholder="price" id="price">
-        <label>Ingresa la URL</label>
-        <input type="text" name="thumbnail"required placeholder="link img" id="thumbnail">
-        <button onclick="addProduct()">Enviar</button>
-</form>
+                <div>
+                        <label>Ingresa el nombre del producto</label>
+                        <input type="text" name="title" placeholder="Nombre del producto" required id="title" class="input">
+                </div>
+                <div>
+                        <label>Ingresa el precio de tu producto</label>
+                        <input type="text" name="price" required placeholder="Precio del producto" id="price" class="input">
+                </div>
+                <div>
+                        <label>Ingresa la URL</label>
+                        <input type="text" name="thumbnail"required placeholder="Link a la imagen de su producto" id="thumbnail" class="input">
+                </div>
+                <button onclick="addProduct()" class="submit">Enviar</button>
+        </form>
 </section>
-<div id="postsProducts">
+<div id="postsProducts" class="postProducts">
 </div>
-<div id="postsMsg">
+<div id="postsMsg" class="postsMsgContainer">
 </div>

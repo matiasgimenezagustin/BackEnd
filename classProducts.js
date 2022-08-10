@@ -40,12 +40,12 @@ class ProductsClass {
             object.id = id;
         }
         this.products.push(object);
-        await saveArchive("./productos.txt", this.products, `el producto con ID ${this.counter} se guardo exitosamente`);
+        await saveArchive("./DB/productos.txt", this.products, `el producto con ID ${this.counter} se guardo exitosamente`);
     }
     async deleteById(id) {
         const map = this.products.filter((content) => content.id !== id);
         this.products = map;
-        await saveArchive("./productos.txt", map, `se elimino el producto con ID: ${id} exitosamente`);
+        await saveArchive("./DB/productos.txt", map, `se elimino el producto con ID: ${id} exitosamente`);
         
     }
     exist(){

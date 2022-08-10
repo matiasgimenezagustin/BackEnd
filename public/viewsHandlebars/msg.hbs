@@ -1,11 +1,11 @@
 <section>
-        <h2>Enviar Mensajes</h2>
-        <div>
-            <label for="nameUser">email:</label>
-            <input type="email" name="email" id="email">
-        </div>
         <h2>Mensajeria</h2>
-        {{#each allMsg}}
+        <div>
+            <label for="nameUser">Email:</label>
+            <input type="email" class="input" name="email" id="email" placeholder="jon_doe@gmail.com">
+        </div>
+        <div class="msgListContainer">
+                    {{#each allMsg}}
             <p>
                 <i class="emailText">email: {{this.email}}</i>
                 <i class="dateText">{{this.date}}:</i>
@@ -13,9 +13,11 @@
             </p>
             <hr/>
         {{/each}}
+        </div>
         <div>
-            <label for="content">Mensaje:</label>
-            <textarea name="content" id="contentMsg" cols="30" rows="5"></textarea>
-            <button onclick="enviarMensaje()">Enviar</button>
+            <div class="msgInputContainer">
+                <textarea name="content" id="contentMsg" placeholder="Escribe un mensaje..."></textarea>
+            </div>
+            <button onclick="enviarMensaje()" class="submit">Enviar</button>
         </div>
 </section>

@@ -6,13 +6,49 @@
     display: flex;
     flex-direction: column;
     padding: 5%;
-    background-color: rgb(210, 214, 214);
+    background-color: rgb(212, 224, 224);
+    height: 80vh;
+    gap: 5vh;
+}
+.formContainer div{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+.input{
+    border: none;
+    border-bottom: solid black 1px;
+    height: 2rem;
+    font-size: 1.5rem;
+    width: 100%;
+    background-color: transparent;
+}
+
+
+.submit{
+    min-width: 130px;
+    height: 40px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border: 2px solid #2c0b8e;
+    background: #2c0b8e;
+    font-size: 1.3rem;
+}
+.submit:hover {
+    background: #fff;
+    color: #2c0b8e
 }
 body{
     background-color: rgb(228, 228, 172);
 }
 h2{
-    font-size: 2rem;
+    font-size: 3rem;
 }
 p{
     font-size: 1.5rem;
@@ -21,7 +57,7 @@ li{
     font-size: 1.5rem;
 }
 label{
-    font-size: 1.7rem;
+    font-size: 1.5rem;
 }
 .emailText{
     color: blue;
@@ -31,4 +67,26 @@ label{
 }
 .mensajeText{
     color: green;
+}
+.postProducts{
+    padding: 5%;
+}
+.listProductsContainer{
+    height: 30rem;
+    overflow-y: scroll;
+}
+.msgListContainer{
+    height: 15rem;
+    overflow-y: scroll;
+}
+.postsMsgContainer{
+    padding: 5%;
+    background-color: rgb(212, 224, 224)
+}
+.msgInputContainer{
+    font-size: 1.3rem;
+}
+.msgInputContainer textarea{
+    width: 100%;
+    height: 6rem;
 }

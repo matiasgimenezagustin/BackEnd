@@ -1,9 +1,9 @@
 <h1>Lista de Productos</h1>
 <hr/>
 {{#if exist}}
-    <section>
+    <section class="listProductsContainer">
         {{#each products}}
-            <ul>
+            <ul >
                 <li>Nombre: {{this.title}}</li>
                 <li>Precio: ${{this.price}}</li>
                 <li><img src={{this.thumbnail}} alt=""><li>
