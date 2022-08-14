@@ -8,7 +8,6 @@ socket.on('connect', () => {
 socket.on("UPDATE_PRODUCT", (products) => {
   const url = "http://localhost:8080/viewsHandlebars/listProducts.hbs";
     fetch(url).then((resp) => {
-      console.log(resp);
       return resp.text();
   }).then((text) => {
     const template = Handlebars.compile(text);
@@ -19,7 +18,6 @@ socket.on("UPDATE_PRODUCT", (products) => {
 
 
 socket.on("INIT", (allMsg)=>{
-  console.log(allMsg)
   const url= "http://localhost:8080/viewsHandlebars/msg.hbs"
     fetch(url).then((resp) =>{
       console.log(resp);
@@ -34,7 +32,6 @@ socket.on("INIT", (allMsg)=>{
 socket.on("NEW_MENSAJE", (allMsg) =>{
   const url= "http://localhost:8080/viewsHandlebars/msg.hbs"
     fetch(url).then((resp) =>{
-      console.log(resp);
       return resp.text()
     }).then((text)=>{
       const template = Handlebars.compile(text)
@@ -42,7 +39,6 @@ socket.on("NEW_MENSAJE", (allMsg) =>{
       document.getElementById("postsMsg").innerHTML = html
     })
 })
-
 
 const getNewDate = () =>{
   const date = new Date()
@@ -55,19 +51,16 @@ const getNewDate = () =>{
   return `[${day}/${month}/${year} ${hours}:${minutes}:${seconds}]`
 }
 function enviarMensaje(){
-  console.log("hola")
   const email = document.getElementById("email").value;
   const content = document.getElementById("contentMsg").value;
   socket.emit("POST_MENSAJE", {email, content, date: getNewDate()})
 }
 
 
-
-
-/* function addProduct (){
+function addProduct(){
   const title = document.getElementById("title").value
   const price = document.getElementById("price").value
   const thumbnail = document.getElementById("thumbnail").value
   console.log(title, price, thumbnail)
   socket.emit("POST_PRODUCT", {title:title, price:price, thumbnail:thumbnail})
-} */
+}

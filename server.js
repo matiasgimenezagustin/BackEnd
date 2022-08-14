@@ -1,4 +1,18 @@
 
+
+// Error catching endware.
+/* server.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
+  const status = err.status || 500;
+  const message = err.message || err;
+  console.error(err);
+  res.status(status).send(message);
+});
+ */
+
+
+
+
+
 // Express Config
 const express = require("express");
 const classPoducts = require("./classProducts");
@@ -15,6 +29,7 @@ const { Server: SocketServer } = require ("socket.io");
 const {Server:HTTPServer} = require("http");
 const httpServer = new HTTPServer(app);
 const socketServer = new SocketServer(httpServer);
+
 
 
 const products = new classPoducts();
@@ -43,7 +58,7 @@ app.get("/", (req, res) =>{
     console.log(products.products);
     res.render("products");
 })
-app.post("/", (req, res) =>{
+/* app.post("/", (req, res) =>{
 
     console.log("Post request done")
     const {title, price, thumbnail} = req.body;
@@ -53,12 +68,13 @@ app.post("/", (req, res) =>{
         thumbnail: thumbnail
     });
     res.render("products", {products: products.products, exist: products.exist()});
-});
+}); */
 
 socketServer.on("connection", (socket) =>{
     console.log("usuario conectado")
     socketServer.emit(events.UPDATE_PRODUCT, {products: products.products, exist: products.exist()})
 
+    socketServer.sockets.emit(events.UPDATE_PRODUCT, {products: products.products, exist: products.exist()})
     //chat de la app
     socketServer.sockets.emit(events.INIT, mensajes.msg) 
 
@@ -70,7 +86,8 @@ socketServer.on("connection", (socket) =>{
 
     socket.on(events.POST_PRODUCT, (product) =>{
         console.log("nuevo producto posteado")
-        socket.emit(events.UPDATE_PRODUCT, product)
+        products.save(product)
+        socket.emit(events.UPDATE_PRODUCT, {products: products.products, exist: products.exist()})
     })
 })
 
