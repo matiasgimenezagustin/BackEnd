@@ -1,0 +1,27 @@
+<h1>
+    Producto seleccionado
+</h1>
+</hr>
+<ul >
+    <li>Nombre: {{productSelect.title}}</li>
+    <li>Precio: ${{productSelect.price}}</li>
+    <li><img src={{productSelect.thumbnail}} alt=""><li>
+    <li>PLU: {{productSelect.codigo}}</li>
+    <li>stock: {{productSelect.stock}}</li>
+    <li>Fecha y Hora: {{productSelect.timestamp}}</li>
+    <li><p>Descripcion: {{productSelect.descripcion}}</p></li>
+</ul>
+{{#if admin}}
+    <div class="formContainer updateContainer">
+        <h2>Actualizar Producto</h2>
+        <input type="text" class="input" value={{productSelect.title}} id="updateTitle">
+        <input type="text" class="input" value={{productSelect.price}} id="updatePrice">
+        <input type="text" class="input" value={{productSelect.thumbnail}} id="updateThumbnail">
+        <input type="text" class="input" value={{productSelect.codigo}} id="updateCodigo">
+        <input type="text" class="input" value={{productSelect.stock}} id="updateStock">
+        <input type="text" class="input" value={{productSelect.timestamp}} id="updateTimestamp">
+        <input type="text" class="input" value={{productSelect.descripcion}} id="updateDescripcion">
+        <button onclick="updateProduct()" class="submit">Actualizar Producto</button>
+    </div>
+{{/if}}
+<button><a href="/api/products">volver</a></button> 

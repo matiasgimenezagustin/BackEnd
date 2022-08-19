@@ -1,14 +1,61 @@
 <h1>Lista de Productos</h1>
 <hr/>
-{{#if exist}}
-    <section class="listProductsContainer">
-        {{#each products}}
-            <ul >
-                <li>Nombre: {{this.title}}</li>
-                <li>Precio: ${{this.price}}</li>
-                <li><img src={{this.thumbnail}} alt=""><li>
-            </ul>
-            <hr/>
-        {{/each}}
-    </section>
+{{#unless admin}}
+    <p>No tiene permisos de administrador para postear un producto!</p>
+    {{#if exist}}
+        <section class="listProductsContainer">
+            <div class="controlsContainer">
+                <h3>Controls</h3>
+                </hr>
+                <div>
+                    <label for="productId">Busca por ID</label>
+                    <input type="number" id="productId" class="input finder">
+                    <button onclick="findIdProduct()" class="submit">buscar</button>
+                </div>
+            </div>
+            {{#each products}}
+                <ul >
+                    <li>Nombre: {{this.title}}</li>
+                    <li>Precio: ${{this.price}}</li>
+                    <li><img src={{this.thumbnail}} alt=""><li>
+                    <li>PLU: {{this.codigo}}</li>
+                    <li>stock: {{this.stock}}</li>
+                    <li>Fecha y Hora: {{this.timestamp}}</li>
+                    <li><p>Descripcion: {{this.descripcion}}</p></li>
+                </ul>
+                <hr/>
+            {{/each}}
+        </section>
+    {{/if}}
+{{/unless}}
+{{#if admin}}
+    {{#unless exist}}
+        <p>No hay productos en la lista!</p>
+    {{/unless}}
+    {{#if exist}}
+        <section class="listProductsContainer">
+            <div class="controlsContainer">
+                <h3>Controls</h3>
+                </hr>
+                <div>
+                    <label for="productId">Busca por ID</label>
+                    <input type="number" id="productId" class="input finder">
+                    <button onclick="findIdProduct()" class="submit">buscar</button>
+                </div>
+            </div>
+            {{#each products}}
+                <ul >
+                    <li>Nombre: {{this.title}}</li>
+                    <li>Precio: ${{this.price}}</li>
+                    <li><img src={{this.thumbnail}} alt=""><li>
+                    <li>PLU: {{this.codigo}}</li>
+                    <li>stock: {{this.stock}}</li>
+                    <li>Fecha y Hora: {{this.timestamp}}</li>
+                    <li><p>Descripcion: {{this.descripcion}}</p></li>
+                </ul>
+                <hr/>
+            {{/each}}
+        </section>
+    {{/if}}
 {{/if}}
+<a href="/api/products" class="submit">volver</a>

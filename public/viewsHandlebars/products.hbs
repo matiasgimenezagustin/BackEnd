@@ -14,10 +14,25 @@
                         <label>Ingresa la URL</label>
                         <input type="text" name="thumbnail"required placeholder="Link a la imagen de su producto" id="thumbnail" class="input">
                 </div>
-                <button onclick="addProduct()" class="submit">Enviar</button>
+                <div>
+                        <label for="codigo">Ingrese el PLU del producto</label>
+                        <input type="text" name="codigo" placeholder="12387612981" id="codigo" class="input">
+                </div>
+                <div>
+                        <label for="stock">Ingrese el stock del producto</label>
+                        <input type="text" name="stock" placeholder="9" id="stock" class="input">
+                </div>
+                <div>
+                        <label for="descripcion">Ingrese una breve descripcion del producto</label>
+                        <textarea name="descripcion" id="descripcion" class=""></textarea>
+                </div>
+                <div>
+                        <input type="submit"  onclick="sendForm()" class="submit"/>
+                </div>
+                <button onclick="switchToAdminMode()" class="submit">Modo Admin</button>
         </div>
 </section>
-<div id="postsProducts" class="postProducts">
+<div id="listProducts">
+
 </div>
-<div id="postsMsg" class="postsMsgContainer">
-</div>
+

@@ -1,5 +1,5 @@
 const fs = require("fs");
-
+const getTimestamp = require("./getTimestamp")
 // Funcion asincrona de guardado de archivos
 const saveArchive = async (rute, content, niceMsg) => {
     try {
@@ -29,9 +29,10 @@ class ProductsClass {
     }
     getById(id) {
         const filterResult = this.products.filter((content) => content.id === id);
-        return filterResult.length === 1 ? filterResult : (filterResult = null);
+        return filterResult.length === 1 ? filterResult[0] :  null;
     }
     async save(object, id) {
+        object.timestamp = getTimestamp()
         if (isNaN(id)) {
             this.counter++;
             object.id = this.counter;

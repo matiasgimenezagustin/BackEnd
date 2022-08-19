@@ -7,8 +7,9 @@
     flex-direction: column;
     padding: 5%;
     background-color: rgb(212, 224, 224);
-    height: 80vh;
+    height: 140vh;
     gap: 5vh;
+    margin-bottom: 20vh;
 }
 .formContainer div{
     display: flex;
@@ -89,4 +90,18 @@ label{
 .msgInputContainer textarea{
     width: 100%;
     height: 6rem;
+}
+textarea{
+    width: 100%;
+    height: 6rem;
+}
+.finder{
+    width: 10rem;
+    background-color: #fff;
+}
+.controlsContainer{
+    padding: 5%;
+}
+.updateContainer{
+    height: 100vh;
 }
